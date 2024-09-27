@@ -4,6 +4,8 @@
 <div class="card">
     <div class="card-header">
         <h2>Anggota kepengurusan RT 52</h2>
+        <br/>
+        <br/>
     </div>
     <table class="table">
         <thead>

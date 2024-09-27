@@ -2,15 +2,12 @@
 @section('content')
 
 <div class="card">
-
-    <div class="card" position="fixed">
-        <div class="card-header">
-            <h2>Ruang diskusi</h2>
-            <p class="aler">Anda telah login sebagai <b>Admin</b>, silakan tambah atau hapus dokumen yang anda inginkan</p>
-            <a href="{{ url('/adminDokumen/create') }}" class="btn btn-success btn-sm" title="Add New file">
-                <i class="fa fa-plus" aria-hidden="true"></i> Tambah file
-            </a>
-        </div>
+    <div class="card-header">
+        <h2>Template Dokumen</h2>
+        <p class="aler">Anda telah login sebagai <b>Admin</b>, silakan tambah atau hapus dokumen yang anda inginkan</p>
+        <a href="{{ url('/adminDokumen/create') }}" class="btn btn-success btn-sm" title="Add New file">
+            <i class="fa fa-plus" aria-hidden="true"></i> Tambah file
+        </a>
     </div>
     <div class="table-responsive">
         <table class="table">

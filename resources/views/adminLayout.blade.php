@@ -41,7 +41,7 @@
     .container {
         margin-top: 6rem;
         background-color: #F5F6FA;
-        padding-bottom: 17rem;
+        padding-bottom: 2rem;
         padding-top: 1rem;
     }
 
@@ -63,7 +63,7 @@
     .header_toggle {
         margin-top: 1rem;
         padding: 0 1rem;
-        color: #cc5803;
+        color: #caa022;
         font-size: 1.5rem;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     }
@@ -139,11 +139,13 @@
         font-size: 1.25rem;
         color: var(--first-color);
         font-weight: 700;
+        margin-bottom: 2rem;
     }
 
     .nav_logo-name {
         color: var(--first-color-light);
-        font-weight: 700
+        font-weight: 700;
+        font-family: "Gill Sans", sans-serif;
     }
 
     .nav_link {
@@ -211,9 +213,6 @@
         padding-bottom: 1rem;
     }
 
-    .card {
-        margin-bottom: 1rem;
-    }
 
     .media-body {
         padding-left: 3rem;
@@ -242,15 +241,78 @@
 
     .aler {
         text-align: center;
+
     }
 
     .aler b {
-        color: #4880FF;
+        color: #8ecae6;
     }
 
     .card-header {
         text-align: center;
+        border: none;
+        background-color: transparent;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
     }
+
+    .dashboard {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .ketRT {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #FFFFFF;
+        margin-left: 3rem;
+        margin-bottom: 1rem;
+        padding: 1rem;
+        padding-left: 5rem;
+        padding-right: 5rem;
+        border-radius: 25px;
+    }
+
+    .chartt {
+        background-color: #FFFFFF;
+        padding: 1rem;
+        padding-bottom: 0;
+        border-radius: 25px;
+    }
+
+    .card {
+        margin-bottom: 1rem;
+        border-radius: 25px;
+    }
+
+    .media {
+        margin-bottom: 1rem;
+        
+    }
+
+    .dashkris{
+        size-adjust: inherit;
+    }
+    .mediadash{
+        font-size: small;
+    }
+    .juduldash{
+        font-weight: 700;
+        font-size: medium;
+        margin-bottom: 0%;
+        padding-bottom: 0%;
+
+    }
+    .aduandash{
+        margin-top: 5px;
+        font-weight: 300;
+
+    }
+
 
 
     @media screen and (min-width: 768px) {
@@ -302,7 +364,7 @@
                         <x-responsive-nav-link :href="route('logout')"
                             onclick="event.preventDefault();
                                         this.closest('form').submit();">
-                            {{ __('Log Out') }}
+                            {{ __('Log Out') }} <i class="bi bi-box-arrow-right"></i>
                         </x-responsive-nav-link>
                     </form>
                 </div>
@@ -312,20 +374,15 @@
                 <div>
                     <a href="#" class="nav_logo">
                         <span class="nav_logo-icon">
-                            <img src="{{URL::asset('/image/logo.png')}}" alt="Logo" width="100x" height="90px">
-                        </span>
-                        <span class="nav_logo-name">
-                            <h5>Lentera Madu</h5>
+                            <img src="{{URL::asset('/image/logo_let.png')}}" alt="Logo" width="100x" height="90px">
                         </span>
 
                     </a>
                     <div class="nav_list">
-                        <a href="#" class="nav_link"><i class="bi bi-pie-chart-fill"></i></i>Dashboard</a>
+                        <a id="das" href="{{url('/adminDashhboard')}}" class="nav_link"><i class="bi bi-pie-chart-fill"></i></i>Dashboard</a>
                         <a id="stu" href="{{url('/adminKrisan')}}" class="nav_link"> <i class="bi bi-chat-left-text-fill"></i> <span class="nav_name">Diskusi</span> </a>
                         <a id='tea' href="{{url('/adminDokumen')}}" class="nav_link"> <i class="bi bi-file-earmark-fill"></i> <span class="nav_name">Dokumen</span></a>
                         <a id='crs' href="{{url('/adminPengurus')}}" class="nav_link"> <i class="bi bi-people-fill"></i> <span class="nav_name">Organisasi</span> </a>
-                        <a href="#" class="nav_link"> <i class='bi bi-person-add nav_icon'></i> <span class="nav_name">-</span> </a>
-                        <a href="#" class="nav_link"> <i class='bi bi-credit-card-2-front-fill nav_icon'></i> <span class="nav_name">-</span> </a>
                     </div>
             </nav>
         </div>

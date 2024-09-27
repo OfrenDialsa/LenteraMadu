@@ -17,7 +17,7 @@ class AdminKriController extends Controller
      */
     public function index()
     {
-        $krisan = Krisan::all();
+        $krisan = Krisan::orderBy('created_at', 'desc')->get();
         return view ('adminKrisan.index')->with('krisan', $krisan);
     }
 

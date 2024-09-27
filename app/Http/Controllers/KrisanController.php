@@ -17,7 +17,7 @@ class KrisanController extends Controller
      */
     public function index()
     {
-        $krisan = Krisan::all();
+        $krisan = Krisan::orderBy('created_at', 'desc')->get();
         return view ('krisan.index')->with('krisan', $krisan);
     }
 

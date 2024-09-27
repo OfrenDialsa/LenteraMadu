@@ -4,6 +4,8 @@
 <div class="card">
     <div class="card-header">
         <h2>Template dokumen surat menyurat</h2>
+        <br/>
+        <br/>
     </div>
         <div class="table-responsive">
             <table class="table">
