@@ -17,9 +17,9 @@ Route::get('/', function () {
     return view('layout');
 });
 
-Route::resource('/pengurus', App\Http\Controllers\PengurusController::class);
+Route::resource('/pengurus', PengurusController::class);
 
-Route::resource('/dokumen', App\Http\Controllers\dokumenController::class);
+Route::resource('/dokumen', dokumenController::class);
 
 Route::resource('/krisan', App\Http\Controllers\KrisanController::class);
 
