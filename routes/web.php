@@ -17,21 +17,21 @@ Route::get('/', function () {
     return view('layout');
 });
 
-Route::resource('/pengurus', PengurusController::class);
+Route::resource('/pengurus', [PengurusController::class]);
 
-Route::resource('/dokumen', dokumenController::class);
+Route::resource('/dokumen', [dokumenController::class]);
 
-Route::resource('/krisan', KrisanController::class);
+Route::resource('/krisan', [KrisanController::class]);
 
-Route::resource('/dashhboard', DashboardController::class);
+Route::resource('/dashhboard', [DashboardController::class]);
 
-Route::resource('/adminDashhboard', DashboardController::class)->middleware(['auth','admin']);
+Route::resource('/adminDashhboard', [DashboardController::class])->middleware(['auth','admin']);
 
-Route::resource('/adminPengurus', AdminPenController::class)->middleware(['auth','admin']);
+Route::resource('/adminPengurus', [AdminPenController::class])->middleware(['auth','admin']);
 
-Route::resource('/adminDokumen', AdminDocController::class)->middleware(['auth','admin']);
+Route::resource('/adminDokumen', [AdminDocController::class])->middleware(['auth','admin']);
 
-Route::resource('/adminKrisan', AdminKriController::class)->middleware(['auth','admin']);
+Route::resource('/adminKrisan', [AdminKriController::class])->middleware(['auth','admin']);
 
 
 Route::middleware('auth')->group(function () {
