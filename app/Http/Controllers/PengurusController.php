@@ -15,7 +15,7 @@ class PengurusController extends Controller
      */
     public function index(): View
     {
-        $pengurus = Pengurus::all();
+        $pengurus = pengurus::all();
         return view ('Pengurus.index')->with('pengurus', $pengurus);
     }
 
@@ -24,7 +24,7 @@ class PengurusController extends Controller
      */
     public function create(): View
     {
-        return view('pengurus.create');
+        return view('Pengurus.create');
     }
 
     /**
@@ -60,7 +60,7 @@ class PengurusController extends Controller
      */
     public function update(Request $request, string $id): RedirectResponse
     {
-        $pengurus = Pengurus::find($id);
+        $pengurus = pengurus::find($id);
         $input = $request->all();
         $pengurus->update($input);
         return redirect('pengurus')->with('flash_message', 'Data pengurus telah di edit!');
@@ -71,7 +71,7 @@ class PengurusController extends Controller
      */
     public function destroy(string $id): RedirectResponse
     {
-        Pengurus::destroy($id);
+        pengurus::destroy($id);
         return redirect('pengurus')->with('flash_message', 'Data pengurus telah dihapus!'); 
     }
 }
