@@ -26,7 +26,7 @@ class KrisanController extends Controller
      */
     public function create()
     {
-        return view('krisan.create');
+        return view('krisan/create');
     }
 
     /**
@@ -35,7 +35,7 @@ class KrisanController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
-        Krisan::create($input);
+        krisan::create($input);
         return redirect('krisan')->with('flash_message', 'Kritik dan saran telah ditambahkan!');
     }
 
@@ -52,7 +52,7 @@ class KrisanController extends Controller
      */
     public function edit(string $id)
     {
-        $krisan = Krisan::find($id);
+        $krisan = krisan::find($id);
         return view('krisan.edit')->with('krisan', $krisan);
     }
 
