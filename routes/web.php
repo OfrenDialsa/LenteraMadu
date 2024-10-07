@@ -23,8 +23,7 @@ Route::get('/dokumen', [DokumenController::class,'index']);
 
 Route::get('/krisan', [KrisanController::class,'index']);
 Route::get('/krisan/create', [KrisanController::class,'create']);
-Route::get('/krisan/create', 'KrisanController@create');
-Route::post('/krisan', 'KrisanController@store');
+Route::post('/krisan', [KrisanController::class,'store']);
 
 Route::get('/dashhboard', [DashboardController::class,'index']);
 
