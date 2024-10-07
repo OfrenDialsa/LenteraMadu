@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\dokumen;
-use App\Models\Krisan;
-use Illuminate\Http\Request;
+use \App\Models\dokumen;
+use \App\Models\Krisan;
+use \Illuminate\Http\Request;
 
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Response;
-use Illuminate\View\View;
+use \Illuminate\Http\RedirectResponse;
+use \Illuminate\Http\Response;
+use \Illuminate\View\View;
 
 class KrisanController extends Controller
 {
@@ -35,8 +35,7 @@ class KrisanController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
-        //Krisan::create($input);
-        Krisan->create($input);
+        \App\Models\Krisan::create($input);
         return redirect('krisan')->with('flash_message', 'Kritik dan saran telah ditambahkan!');
     }
 
