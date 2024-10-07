@@ -34,21 +34,16 @@ class KrisanController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'judul' => 'required|string',
-            'aduan' => 'required|string',
-        ]);
-    
+        $input = $request->all();
         // Create a new Krisan instance
         $krisan = new Krisan();
-        $krisan->judul = $validatedData['judul'];
-        $krisan->aduan = $validatedData['aduan'];
+        $krisan = $input;
         $krisan->save();
     
         // Redirect to the index page
         return redirect()->route('krisan.index')>with('flash_message', 'Kritik dan saran telah ditambahkan!');
 
-        //$input = $request->all();
+        //
         
         //Krisan::create($input);
         //return redirect('krisan')->with('flash_message', 'Kritik dan saran telah ditambahkan!');
