@@ -16,7 +16,7 @@ class PengurusController extends Controller
     public function index(): View
     {
         $pengurus = pengurus::all();
-        return view ('Pengurus.index')->with('pengurus', $pengurus);
+        return view ('pengurus.index')->with('pengurus', $pengurus);
     }
 
     /**
@@ -24,7 +24,7 @@ class PengurusController extends Controller
      */
     public function create(): View
     {
-        return view('Pengurus.create');
+        return view('pengurus.create');
     }
 
     /**
@@ -42,8 +42,8 @@ class PengurusController extends Controller
      */
     public function show(string $id): View
     {
-        $pengurus = Pengurus::find($id);
-        return view('Pengurus.show')->with('pengurus', $pengurus);
+        $pengurus = pengurus::find($id);
+        return view('pengurus.show')->with('pengurus', $pengurus);
     }
 
     /**
@@ -51,8 +51,8 @@ class PengurusController extends Controller
      */
     public function edit(string $id): View
     {
-        $pengurus = Pengurus::find($id);
-        return view('Pengurus.edit')->with('pengurus', $pengurus);
+        $pengurus = pengurus::find($id);
+        return view('pengurus.edit')->with('pengurus', $pengurus);
     }
 
     /**
