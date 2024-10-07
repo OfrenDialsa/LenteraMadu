@@ -17,7 +17,7 @@ class AdminKriController extends Controller
      */
     public function index()
     {
-        $krisan = Krisan::orderBy('created_at', 'desc')->get();
+        $krisan = krisan::orderBy('created_at', 'desc')->get();
         return view ('adminKrisan.index')->with('krisan', $krisan);
     }
 
@@ -35,7 +35,7 @@ class AdminKriController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
-        Krisan::create($input);
+        krisan::create($input);
         return redirect('adminKrisan')->with('flash_message', 'Kritik dan saran telah ditambahkan!');
     }
 
@@ -52,7 +52,7 @@ class AdminKriController extends Controller
      */
     public function edit(string $id)
     {
-        $krisan = Krisan::find($id);
+        $krisan = krisan::find($id);
         return view('adminKrisan.edit')->with('krisan', $krisan);
     }
 
@@ -61,7 +61,7 @@ class AdminKriController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $krisan = Krisan::find($id);
+        $krisan = krisan::find($id);
         $input = $request->all();
         $krisan->update($input);
         return redirect('adminKrisan')->with('flash_message', 'Telah ditanggapi');
@@ -72,7 +72,7 @@ class AdminKriController extends Controller
      */
     public function destroy(string $id)
     {
-        Krisan::destroy($id);
+        krisan::destroy($id);
         return redirect('adminKrisan')->with('flash_message', 'Kritik dan saran telah dihapus!'); 
     }
 }
