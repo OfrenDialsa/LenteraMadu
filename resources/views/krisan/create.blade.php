@@ -5,7 +5,7 @@
   <div class="card-header">Kirimkan kritik dan saran anda</div>
   <div class="card-body">
       
-      <form action="{{ url('Krisan') }}" method="post">
+      <form action="{{ url('krisan') }}" method="post">
         {!! csrf_field() !!}
         <label>Judul</label></br>
         <input type="text" name="judul" id="judul" class="form-control"></br>
