@@ -36,11 +36,11 @@ class KrisanController extends Controller
     {
         $input = $request->all();
         try {
-        \App\Models\Krisan::create($input);
-        return redirect('krisan')->with('flash_message', 'Kritik dan saran telah ditambahkan!');
+        Krisan::create($input);
+        return redirect('krisan.create')->with('flash_message', 'Kritik dan saran telah ditambahkan!');
     } catch (\Exception $e) {
         // Log the error or display an error message
-        return redirect('krisan')->with('error_message', 'Failed to create Krisan');
+        return redirect('krisan.create')->with('error_message', 'Failed to create Krisan');
     }
     }
 
