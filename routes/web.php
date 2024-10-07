@@ -21,13 +21,6 @@ Route::get('/pengurus', [PengurusController::class,'index']);
 
 Route::get('/dokumen', [DokumenController::class,'index']);
 
-php
-
-Verify
-
-Open In Editor
-Edit
-Copy code
 Route::prefix('krisan')->group(function () {
     // Create
     Route::get('/create', [KrisanController::class,'create']);
