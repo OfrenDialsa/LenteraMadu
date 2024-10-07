@@ -21,8 +21,8 @@ Route::get('/pengurus', [PengurusController::class,'index']);
 
 Route::get('/dokumen', [DokumenController::class,'index']);
 
-Route::get('/krisan', [KrisanController::class],'index');
-Route::get('/krisan', [KrisanController::class],'create');
+Route::get('/krisan', [KrisanController::class,'index']);
+Route::get('/krisan', [KrisanController::class,'create']);
 
 Route::get('/dashhboard', [DashboardController::class,'index']);
 
