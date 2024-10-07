@@ -24,7 +24,7 @@ Route::get('/dokumen', [DokumenController::class,'index']);
 Route::prefix('krisan')->group(function () {
     // Create
     Route::get('/create', [KrisanController::class,'create']);
-    Route::post('/', [KrisanController::class,'store']);
+    Route::post('/', [KrisanController::class,'store'])->name('krisan.store');
 
     // Read
     Route::get('/', [KrisanController::class,'index']);
