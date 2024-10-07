@@ -21,9 +21,29 @@ Route::get('/pengurus', [PengurusController::class,'index']);
 
 Route::get('/dokumen', [DokumenController::class,'index']);
 
-Route::get('/krisan', [KrisanController::class,'index']);
-Route::get('/krisan/create', [KrisanController::class,'create']);
-Route::post('/krisan/create', [KrisanController::class,'store']);
+php
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+Route::prefix('krisan')->group(function () {
+    // Create
+    Route::get('/create', [KrisanController::class,'create']);
+    Route::post('/', [KrisanController::class,'store']);
+
+    // Read
+    Route::get('/', [KrisanController::class,'index']);
+    Route::get('/{id}', [KrisanController::class,'show']);
+
+    // Update
+    Route::get('/{id}/edit', [KrisanController::class,'edit']);
+    Route::patch('/{id}', [KrisanController::class,'update']);
+
+    // Delete
+    Route::delete('/{id}', [KrisanController::class,'destroy']);
+});
 
 Route::get('/dashhboard', [DashboardController::class,'index']);
 
