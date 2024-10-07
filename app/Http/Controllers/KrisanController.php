@@ -17,7 +17,7 @@ class KrisanController extends Controller
      */
     public function index()
     {
-        $krisan = krisan::orderBy('created_at', 'desc')->get();
+        $krisan = Krisan::orderBy('created_at', 'desc')->get();
         return view ('krisan.index')->with('krisan', $krisan);
     }
 
@@ -35,7 +35,7 @@ class KrisanController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
-        krisan::create($input);
+        Krisan::create($input);
         return redirect('krisan')->with('flash_message', 'Kritik dan saran telah ditambahkan!');
     }
 
