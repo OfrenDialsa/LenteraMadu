@@ -26,7 +26,7 @@ class KrisanController extends Controller
      */
     public function create()
     {
-        return view('krisan/create');
+        return view('krisan/create.blade.php');
     }
 
     /**
