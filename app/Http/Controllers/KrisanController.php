@@ -37,7 +37,8 @@ class KrisanController extends Controller
         $input = $request->all();
         // Create a new Krisan instance
         $krisan = new Krisan();
-        $krisan = $input;
+        $krisan->judul = $data['judul'];
+        $krisan->aduan = $data['aduan'];
         $krisan->save();
     
         // Redirect to the index page
